@@ -8,11 +8,11 @@ const router = createBrowserRouter(routes);
 
 function App() {
   return (
-    <>
+    <div id="container">
       <Navbar />
       <RouterProvider router={router} />
       <Footer />
-    </>
+    </div>
   );
 }
 

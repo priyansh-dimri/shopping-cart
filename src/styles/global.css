@@ -21,6 +21,12 @@
   --icon-size: 1.5rem;
 }
 
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .icon {
   height: 1.5rem;
   margin: auto auto;
@@ -41,7 +47,8 @@
   margin-left: 0.5rem;
 }
 
-#cart, .nav-link {
+#cart,
+.nav-link {
   margin-left: auto;
   border-left: var(--primary-border);
   display: grid;
@@ -55,7 +62,52 @@
   }
 }
 
-#cart:hover, .nav-link:hover {
+#cart:hover,
+.nav-link:hover {
   background-color: var(--secondary-color);
   cursor: pointer;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  flex: 1;
+}
+
+/* Home Page styles */
+#hero-image {
+  height: 400px;
+  padding-left: 1rem;
+}
+
+#hero-content {
+  display: grid;
+  justify-items: center;
+  grid-column: 2 / -1;
+  align-self: center;
+  padding-right: 1rem;
+}
+
+#hero-title {
+  font-family: title-font;
+  font-size: 4rem;
+}
+
+#hero-subtitle {
+  font-family: primary-font;
+  font-size: 1.5rem;
+}
+
+/* Footer Styles */
+#footer {
+  border-top: var(--primary-border);
+  font-family: secondary-font;
+  font-size: 0.75rem;
+  padding: 0.25rem;
+  text-align: center;
+}
+
+a {
+  color: inherit;
 }
