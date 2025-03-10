@@ -124,6 +124,7 @@ main {
   text-align: center;
   font-family: primary-font;
   font-size: 0.8rem;
+  padding-top: 0.25rem;
 }
 
 .product-price {
@@ -145,6 +146,7 @@ main {
   background-color: transparent;
   border: none;
   outline: none;
+  font-weight: bold;
 }
 
 .minus {

@@ -1,4 +1,4 @@
-function ProductCard({ product, updateProductCount }) {
+function ProductCard({ product, updateProductCount, updateCart }) {
   return (
     <div className="product-card">
       <img className="product-image" src={product.image} alt="Product Image" />
@@ -12,7 +12,7 @@ function ProductCard({ product, updateProductCount }) {
         >
           -
         </button>
-        <div className="product-count">{product.count}</div>
+        <div className="product-count">{product.change}</div>
         <button
           type="button"
           className="product-count-button plus"
@@ -21,7 +21,11 @@ function ProductCard({ product, updateProductCount }) {
           +
         </button>
       </div>
-      <button type="button" className="add-to-cart">
+      <button
+        type="button"
+        className="add-to-cart"
+        onClick={() => updateCart(product.id, product.change)}
+      >
         ADD TO CART
       </button>
     </div>

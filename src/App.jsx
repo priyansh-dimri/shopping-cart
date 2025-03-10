@@ -19,7 +19,7 @@ function App() {
             title: product.title,
             price: product.price,
             image: product.image,
-            count: 0,
+            change: 0,
           }))
         )
       )
@@ -30,17 +30,30 @@ function App() {
     setProducts((prevProducts) =>
       prevProducts.map((product) =>
         product.id === id
-          ? { ...product, count: Math.max(0, product.count + change) }
+          ? { ...product, change: Math.max(0, product.change + change) }
           : product
       )
     );
+  };
+
+  const updateCart = (id, change) => {
+    setCart((prevCart) => {
+      const newCart = { ...prevCart };
+
+      newCart[id] = (newCart[id] || 0) + change;
+      if (newCart[id] <= 0) delete newCart[id];
+
+      setCartCount((prevCartCount) => prevCartCount + change);
+
+      return newCart;
+    });
   };
 
   return (
     <div id="container">
       <Navbar cartCount={cartCount} />
       <main>
-        <Outlet context={{ products, updateProductCount }} />
+        <Outlet context={{ products, updateProductCount, updateCart }} />
       </main>
       <Footer />
     </div>
