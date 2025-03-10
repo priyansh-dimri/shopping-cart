@@ -19,17 +19,28 @@ function App() {
             title: product.title,
             price: product.price,
             image: product.image,
+            count: 0,
           }))
         )
       )
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
+  const updateProductCount = (id, change) => {
+    setProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.id === id
+          ? { ...product, count: Math.max(0, product.count + change) }
+          : product
+      )
+    );
+  };
+
   return (
     <div id="container">
       <Navbar cartCount={cartCount} />
       <main>
-        <Outlet />
+        <Outlet context={{ products, updateProductCount }} />
       </main>
       <Footer />
     </div>
