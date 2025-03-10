@@ -53,12 +53,16 @@
   margin-left: auto;
   border-left: var(--primary-border);
   display: grid;
-  grid-template-columns: auto auto;
+  gap: 0.25rem;
   padding: 0 0.5rem;
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
+}
+
+#cart {
+  grid-template-columns: auto auto;
 }
 
 #cart:hover,
