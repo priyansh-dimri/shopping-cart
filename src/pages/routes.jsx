@@ -2,20 +2,18 @@ import Cart from "./Cart";
 import Home from "./Home";
 import NotFound from "./NotFound";
 import Shop from "./Shop";
+import App from "../App";
 
 const routes = [
   {
     path: "/",
-    element: <Home />,
-    errorElement: <NotFound />,
-  },
-  {
-    path: "/shop",
-    element: <Shop />,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
+    element: <App />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "shop", element: <Shop /> },
+      { path: "cart", element: <Cart /> },
+      { path: "*", element: <NotFound /> },
+    ],
   },
 ];
 

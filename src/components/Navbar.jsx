@@ -1,15 +1,18 @@
+import { NavLink } from "react-router-dom";
 import CartIcon from "./../assets/images/cart.svg";
 
 function Navbar() {
   return (
     <div id="navbar">
       <div id="title">HashCart</div>
-      <div className="nav-link home">Home</div>
-      <div className="nav-link">Shop</div>
-      <div id="cart" type="button">
+      <NavLink to="/" className="nav-link">
+        Home
+      </NavLink>
+      <NavLink to="/shop" className="nav-link">Shop</NavLink>
+      <NavLink to="/cart" id="cart" type="button">
         <div id="cart-count"></div>
         <img src={CartIcon} alt="Shopping Cart" className="icon" />
-      </div>
+      </NavLink>
     </div>
   );
 }
