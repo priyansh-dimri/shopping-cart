@@ -10,7 +10,9 @@ function App() {
   return (
     <div id="container">
       <Navbar />
-      <RouterProvider router={router} />
+      <main>
+        <RouterProvider router={router} />
+      </main>
       <Footer />
     </div>
   );
