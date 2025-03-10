@@ -12,3 +12,50 @@
   font-family: secondary-font;
   src: url(./../assets/fonts/Inter/Inter-VariableFont.ttf);
 }
+
+:root {
+  --primary-color: #0e0e0e;
+  --secondary-color: #d7d7d7;
+
+  --primary-border: 2px solid var(--primary-color);
+  --icon-size: 1.5rem;
+}
+
+.icon {
+  height: 1.5rem;
+  margin: auto auto;
+}
+
+#navbar {
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr repeat(3, auto);
+  grid-template-rows: 2rem;
+  border-bottom: var(--primary-border);
+}
+
+#title {
+  color: var(--primary-color);
+  align-self: center;
+  font-family: title-font;
+  margin-left: 0.5rem;
+}
+
+#cart, .nav-link {
+  margin-left: auto;
+  border-left: var(--primary-border);
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 0 0.5rem;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  hover {
+    background-color: var(--secondary-color);
+  }
+}
+
+#cart:hover, .nav-link:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
