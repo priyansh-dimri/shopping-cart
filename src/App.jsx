@@ -43,17 +43,17 @@ function App() {
       newCart[id] = (newCart[id] || 0) + change;
       if (newCart[id] <= 0) delete newCart[id];
 
-      setCartCount((prevCartCount) => prevCartCount + change);
-
       return newCart;
     });
+
+    setCartCount((prevCartCount) => Math.max(0, prevCartCount + change));
   };
 
   return (
     <div id="container">
       <Navbar cartCount={cartCount} />
       <main>
-        <Outlet context={{ products, updateProductCount, updateCart }} />
+        <Outlet context={{ cart, products, updateProductCount, updateCart }} />
       </main>
       <Footer />
     </div>
